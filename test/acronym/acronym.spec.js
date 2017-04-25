@@ -8,8 +8,13 @@ describe('Testing Acronym generator class', () => {
     it('returns uppercase ', () => {
         expect(Acronym.generate('abc')).toBe('ABC')
     })
-
-    it('returns uppercase ', () => {
-        expect(Acronym.generate('abc')).toBe('ABC')
+    
+    it('returns SKORPION from PPHU Skorpion ', () => {
+        expect(Acronym.generate('PPHU Skorpion')).toBe('SKORPION')
     })
+
+    it('returns only 16 characters from name ', () => {
+        expect(Acronym.generate('characterscharacterscharacters')).toHaveLength(16)
+    })
+    
 })
